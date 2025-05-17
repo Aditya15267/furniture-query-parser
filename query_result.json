@@ -1,0 +1,31 @@
+{
+  "product_type": "Sofa",
+  "features": {
+    "Back": [
+      "Curved Back"
+    ],
+    "Upholstery": [
+      "Leather",
+      "Fabric"
+    ],
+    "Legs": [
+      "Inclined Leg",
+      "Metal Detail",
+      "Inclined Leg"
+    ],
+    "Structure": [
+      "Metal",
+      "Metal detail"
+    ],
+    "Material": [
+      "Metal"
+    ]
+  },
+  "price_range": {
+    "min": null,
+    "max": 30000,
+    "currency": "INR"
+  },
+  "location": "Mumbai",
+  "space": "Office"
+}
