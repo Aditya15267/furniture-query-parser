@@ -46,6 +46,38 @@ The parser uses a hybrid approach combining:
 - **Location Extraction:** Identifies city names in the query
 - **Space Identification:** Detects intended space/room (Living room, bedroom, etc.)
 
+## Design Notes
+
+The query parser is designed to be modular, interpretable, and easily extensible. Below are the key design considerations:
+
+### Modular Architecture
+
+The project is structured into separate modules for:
+
+- **Product & Feature Matching:** Uses fuzzy matching and rule-based logic to extract product type and feature categories.
+- **Price Parsing:** Extracts price ranges using regex patterns and currency normalization.
+- **Location & Space Detection:** Identifies geographic and spatial intent from queries.
+
+Each module is independently testable and replaceable.
+
+### Hybrid NLP Approach
+
+We combine multiple NLP strategies:
+
+- **Fuzzy Matching (fuzzywuzzy):** To handle typos like "leathr" -> "leather".
+- **Custom Synonym Dictionary:** Maintains mappings like "curvy" -> "Curved Back".
+- **Rule-Based Logic:** It understands user requests by following set patterns, like identifying price ranges (e.g. detecting phrases like "under ₹30k").
+
+### Domain Awareness
+
+The system uses specific furniture vocabularies such as:
+
+- Product types (Sofa, Chair, Ottoman, etc.)
+- Feature categories (Back, Upholstery, Legs, etc.)
+- Real-world price expressions (e.g. "under 30k", "between 20,000 and 50,000 INR")
+
+By focusing on a specific area, it fills in the blanks precisely, without the errors of broader language.
+
 ## Testing
 
 Run the test suite to verify parser functionality:
